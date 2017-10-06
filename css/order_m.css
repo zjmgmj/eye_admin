@@ -1,0 +1,14 @@
+.table_input td {
+  padding: 0;
+}
+.table_input td input[type="text"],
+.table_input td select {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  box-sizing: border-box;
+  padding: 0 5px;
+  background: none;
+}
+/*# sourceMappingURL=order_m.css.map */

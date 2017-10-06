@@ -10,7 +10,7 @@ $('.table-sort').dataTable({
 		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
 		{
 			"orderable": false,
-			"aTargets": [0, 10]
+			"aTargets": [0]
 		} // 不参与排序的列
 	]
 });
