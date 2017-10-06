@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+		<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/employee.css" />
+		<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+		<title>基本资料</title>
+	</head>
+
+	<body>
+		<div class="edit_content" style=" width: 1200px;position: absolute; left: 50%; margin-left: -600px;">
+			<div class="layui-layer-title">编辑</div>
+			<div class="layui-layer-content">
+				<form>
+					<div class="edit_large">
+						<h4>订单信息</h4>
+						<ul>
+							<li class="edit_list"><span>客户名称：</span><input type="text" name="" id="customer_name" value="" /></li>
+							<li class="edit_list"><span>订单时间：</span><input type="time" name="" id="order_time" value="" /></li>
+							<li class="edit_list"><span>开单人员：</span><input type="text" name="" id="billing_staff" value="" /></li>
+							<li class="edit_list"><span>产品：</span><input type="text" name="" id="product" value="" /></li>
+							<li class="edit_list"><span>数量：</span><input type="number" name="" id="price" value="" /></li>
+							<li class="edit_list"><span>价格：</span><input type="text" name="" id="express" value="" /></li>
+							<li class="edit_list"><span>快递方式：</span><input type="text" name="" id="remarks" value="" /></li>
+							<li class="edit_list"><span>备注：</span><input type="text" name="" id="undefined" value="" /></li>
+						</ul>
+					</div>
+					<div class="edit_large">
+						<h4>客户信息</h4>
+						<ul>
+							<li class="edit_list"><span>单位名称：</span><input type="text" name="" id="company_name" value="" /></li>
+							<li class="edit_list"><span>地址：</span><input type="text" name="" id="add" value="" /></li>
+							<li class="edit_list"><span>联系人：</span><input type="text" name="" id="name" value="" /></li>
+							<li class="edit_list"><span>电话：</span><input type="text" name="" id="tel" value="" /></li>
+							<li class="edit_list"><span>客户类型：</span><input type="text" name="" id="customer_type" value="" /></li>
+							<li class="edit_list"><span>客户价格：</span><input type="text" name="" id="customer_price" value="" /></li>
+							<li class="edit_list"><span>管辖业务员：</span><input type="text" name="" id="clerk" value="" /></li>
+							<li class="edit_list"><span>当前欠款：</span><input type="text" name="" id="arrears" value="" /></li>
+						</ul>
+					</div>
+					<div class="edit_large">
+						<h4>产品信息</h4>
+						<ul>
+							<li class="edit_list"><span>品牌：</span><select name="">
+								<option value="">111</option>
+								<option value="">111</option>
+							</select></li>
+							<li class="edit_list"><span>型号：</span><input type="text" name="" id="model" value="" /></li>
+							<li class="edit_list"><span>片型：</span><input type="text" name="" id="chip" value="" /></li>
+							<li class="edit_list"><span>折算率：</span><input type="text" name="" id="conversion" value="" /></li>
+							<li class="edit_list"><span>销售价格：</span><input type="text" name="" id="price" value="" /></li>
+						</ul>
+					</div>
+					<div class="submit">
+						<button type="reset">重置</button>
+						<button class="blue white_text">保存</button>
+					</div>
+				</form>
+			</div>
+			<div class="layui-layer-setwin">
+				<a href="javascript:;" class="layui-layer-ico layui-layer-close layui-layer-close1 Hui-iconfont Hui-iconfont-close"></a>
+			</div>
+		</div>
+
+		<!--_footer 作为公共模版分离出去-->
+		<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+		<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+		<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--/_footer 作为公共模版分离出去-->
+
+		<!--请在下方写此页面业务相关的脚本-->
+		<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+		<script src="js/verification.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/p_commission.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

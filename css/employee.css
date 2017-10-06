@@ -1,0 +1,159 @@
+.h1 {
+  font-size: 16px;
+}
+.edit_btn {
+  cursor: pointer;
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.edit_content {
+  width: 500px;
+  min-height: 300px;
+  background: #fff;
+  border-radius: 5px;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 999;
+  overflow: hidden;
+}
+.edit_content .edit_close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+.edit_content .edit_large {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.edit_content .edit_large h4 {
+  width: 100%;
+  border-bottom: 1px #f2f2f2 solid;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.edit_content .edit_large .edit_list {
+  width: 390px;
+  float: left;
+  margin: 5px 0;
+}
+.edit_content .edit_large select {
+  height: 30px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.edit_content .edit_large:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.edit_title {
+  width: 100%;
+  line-height: 42px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  color: #fff;
+  overflow: hidden;
+  background: #006fa6;
+  border-right: 17px;
+}
+.edit_from {
+  box-sizing: border-box;
+  padding: 15px 15px 20px;
+}
+.edit_list {
+  margin: 15px 0;
+}
+.edit_list span {
+  width: 85px;
+  text-align: right;
+  display: inline-block;
+}
+.edit_list input {
+  width: 250px;
+  border: 1px #ccc solid;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin-left: 4px;
+}
+.edit_list select {
+  width: 250px;
+  border: 1px #ccc solid;
+  height: 32px;
+  line-height: 32px;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+.edit_list select option {
+  line-height: 30px;
+  height: 30px;
+  padding: 10px 0;
+}
+.submit {
+  text-align: center;
+}
+.submit .blue {
+  background: #19a97b;
+}
+.submit .white_text {
+  color: #fff;
+}
+.submit button {
+  border: none;
+  width: 100px;
+  line-height: 30px;
+  border-radius: 3px;
+  height: 30px;
+  margin: 0 5px;
+}
+.dataTables_length {
+  font-size: 12px;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+.dataTables_length label {
+  font-size: 13px;
+  color: #666;
+}
+.employ_search {
+  float: left;
+  margin-bottom: 10px;
+}
+.layer-anim {
+  -webkit-animation-name: inherit!important;
+  animation-name: inherit!important;
+}
+.edit_check {
+  margin-bottom: 10px;
+}
+.edit_check .edit_check_title {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.edit_check .edit_check_list {
+  box-sizing: border-box;
+  padding-left: 15px;
+  float: left;
+  width: 150px;
+}
+.edit_check:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.edit_check label {
+  margin-left: 5px;
+  display: inline-block;
+}
