@@ -15,7 +15,7 @@ $('.table-sort').dataTable({
 	]
 });
 /*添加*/
-function article_add(title, url, w, h) {
+/*function article_add(title, url, w, h) {
 	var window_title='添加';
 	var title=['订单信息','客户信息','产品信息'];
 	var content_title=[
@@ -36,9 +36,9 @@ function article_add(title, url, w, h) {
 	var select_content=[['品牌1','品牌2','品牌3']];
 	edit_large_show(window_title,title,content_title,content_type,content_id,'1200px','auto',select_content);
 	verification_val(content_id[0][0],'isBlank');
-}
+}*/
 /*编辑*/
-function article_edit(obj) {
+/*function article_edit(obj) {
 	var window_title='编辑';
 	var title=['订单信息','客户信息','产品信息'];
 	var content_title=[
@@ -59,7 +59,7 @@ function article_edit(obj) {
 	var select_content=[['品牌1','品牌2','品牌3']];
 	edit_large_show(window_title,title,content_title,content_type,content_id,'1200px','auto',select_content);
 	verification_val(content_id[0][0],'isBlank');
-}
+}*/
 /*删除*/
 function article_del(obj, id) {
 	layer.confirm('确认要删除吗？', function(index) {
