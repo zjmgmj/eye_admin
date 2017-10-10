@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+		<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+		<link rel="stylesheet" href="lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/employee.css" />
+		<link rel="stylesheet" type="text/css" href="css/warehouse_material.css" />
+		<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="page-container">
+			<div id="treeDemo" class="ztree ztree_w"></div>
+			<div class="ztree_content">
+				<div class="mt-20">
+					<span class="l" style="margin-right: 6px;">
+					<!--<a href="javascript:;" class="btn btn-danger radius">
+						<i class="Hui-iconfont">&#xe6e2;</i> 取消
+					</a> -->
+					<a class="btn btn-primary radius ok_btn" data-title="ok_btn" href="javascript:;">
+						<i class="Hui-iconfont">&#xe725;</i> 确定
+					</a>
+				</span>
+					<div class="employ_search">
+						<span>客户：</span><input type="text" name="" id="" placeholder=" " style="width:250px" class="input-text">
+					</div>
+					<table class="table table-border table-bg table-bordered table-striped radius table-sort table-hover table-responsive">
+						<thead>
+							<tr class="text-c">
+								<th width="25"><input type="checkbox" name="" value=""></th>
+								<th width="90">开单人员</th>
+								<th width="40">产品</th>
+								<th width="150">数量</th>
+								<th width="50">价格</th>
+								<th width="50">快递方式</th>
+								<th width="50">备注</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="text-c">
+								<td><input type="checkbox" value="" name=""></td>
+								<td>Admin</td>
+								<td>定制</td>
+								<td>35</td>
+								<td>150</td>
+								<td>汽运</td>
+								<td>备注46546464</td>
+							</tr>
+							<tr class="text-c">
+								<td><input type="checkbox" value="" name=""></td>
+								<td>Admin</td>
+								<td>定制</td>
+								<td>35</td>
+								<td>150</td>
+								<td>汽运</td>
+								<td>备注46546464</td>
+							</tr>
+							<tr class="text-c">
+								<td><input type="checkbox" value="" name=""></td>
+								<td>Admin</td>
+								<td>定制</td>
+								<td>35</td>
+								<td>150</td>
+								<td>汽运</td>
+								<td>备注46546464</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--_footer 作为公共模版分离出去-->
+		<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+		<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+		<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--/_footer 作为公共模版分离出去-->
+
+		<!--请在下方写此页面业务相关的脚本-->
+		<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+
+		<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+		<!--树形菜单-->
+		<script type="text/javascript">
+			$('.table-sort').dataTable({
+				"aaSorting": [
+					[1, "desc"]
+				], //默认第几个排序
+				"bStateSave": true, //状态保存
+				"bFilter": false, //过滤
+				"pading": false,
+				"sDom": 'rt<"bottom"ilp>', //改变元素位置
+				"aoColumnDefs": [
+					//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+					{
+						"orderable": false,
+						"aTargets": [0]
+					} // 不参与排序的列
+				]
+			});
+			var setting = {
+				view: {
+					dblClickExpand: false,
+					showLine: false,
+					selectedMulti: false
+				},
+				data: {
+					simpleData: {
+						enable: true,
+						idKey: "id",
+						pIdKey: "pId",
+						rootPId: ""
+					}
+				},
+				callback: {
+					beforeClick: function(treeId, treeNode) {
+						var zTree = $.fn.zTree.getZTreeObj("tree");
+						if(treeNode.isParent) {
+							zTree.expandNode(treeNode);
+							return false;
+						} else {
+							demoIframe.attr("src", treeNode.file + ".html");
+							return true;
+						}
+					}
+				}
+			};
+
+			var code;
+			var zNodes =[
+					{ id:1, pId:0, name:"仓库", open:true},
+						{ id:11, pId:1, name:"分类1",open:true},
+							/*{ id:111, pId:11, name:"产品1"},
+							{ id:112, pId:11, name:"产品2"},
+							{ id:113, pId:11, name:"产品3"},
+							{ id:114, pId:11, name:"产品4"},*/
+						{ id:21, pId:1, name:"分类2",open:true},
+							/*{ id:111, pId:21, name:"产品1"},
+							{ id:112, pId:21, name:"产品2"},
+							{ id:113, pId:21, name:"产品3"},
+							{ id:114, pId:21, name:"产品4"},*/
+						{ id:31, pId:1, name:"分类3",open:true},
+							/*{ id:111, pId:31, name:"产品1"},
+							{ id:112, pId:31, name:"产品2"},
+							{ id:113, pId:31, name:"产品3"},
+							{ id:114, pId:31, name:"产品4"},*/
+					
+				];
+			function showCode(str) {
+				if(!code) code = $("#code");
+				code.empty();
+				code.append("<li>" + str + "</li>");
+			}
+
+			$(document).ready(function() {
+				var t = $("#treeDemo");
+				t = $.fn.zTree.init(t, setting, zNodes);
+				demoIframe = $("#testIframe");
+				//demoIframe.on("load", loadReady);
+				var zTree = $.fn.zTree.getZTreeObj("tree");
+				//zTree.selectNode(zTree.getNodeByParam("id",'11'));
+			});
+		</script>
+	</body>
+
+</html>

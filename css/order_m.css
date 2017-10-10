@@ -11,4 +11,18 @@
   padding: 0 5px;
   background: none;
 }
-/*# sourceMappingURL=order_m.css.map */
+.input-text {
+  width: 250px;
+}
+.textarea {
+  width: 1218px;
+  border-radius: 3px;
+}
+.form-label {
+  float: left;
+}
+.order_m_t li {
+  float: left;
+  margin-top: 10px;
+  margin-right: 5px;
+}
