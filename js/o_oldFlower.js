@@ -22,7 +22,7 @@ function billing(url) {
 		layer.open({
 			type: 1,
 			title: '开单',
-			area: ['1400px', '800px'],
+			area: ['80%', '80%'],
 			skin: 'edit_content', //样式类名
 			closeBtn: 1, //不显示关闭按钮
 			//anim: 2,
