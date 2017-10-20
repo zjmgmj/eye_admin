@@ -16,15 +16,15 @@
 		<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
 		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-		<link rel="stylesheet" href="lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
-		
+
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<link rel="stylesheet" type="text/css" href="css/employee.css" />
+		<link rel="stylesheet" type="text/css" href="css/order_m.css"/>
 		<!--[if IE 6]>
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-		<title>订单审核</title>
+		<title>基本资料</title>
 	</head>
 
 	<body>
@@ -34,35 +34,32 @@
 				<i class="Hui-iconfont">&#xe68f;</i>
 			</a>
 		</nav>
-		
 		<div class="page-container">
-			<div id="treeDemo" class="ztree ztree_w"></div>
-			<div class="ztree_content">
-				<div class="mt-20">
+			
+			<div class="mt-20">
 				<span class="l" style="margin-right: 6px;">
-					<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius">
+					<a href="javascript:;" class="btn btn-danger radius del_btn">
 						<i class="Hui-iconfont">&#xe6e2;</i> 删除
 					</a> 
-					<!--<a class="btn btn-primary radius add_btn" data-title="添加" href="javascript:;">
-						<i class="Hui-iconfont">&#xe600;</i> 开单
-					</a>-->
 					<a class="btn btn-primary radius audit_btn" data-title="audit_btn" href="javascript:;">
 						<i class="Hui-iconfont">&#xe725;</i> 审核
 					</a>
 				</span>
 				<div class="employ_search">
-					<span>客户：</span><input type="text" name="" id="" placeholder=" " style="width:250px" class="input-text">
-					<span>订单日期：</span><input type="text" name="" id="" value="" disabled="disabled" style="width:250px" class="input-text"/>
-					<span>订单编号：</span><input type="text" name="" id="" value="" disabled="disabled" style="width:250px" class="input-text"/>
+					<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;"> -
+					<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
+					
+					<input type="text" name="" id="" placeholder=" " style="width:250px" class="input-text">
+					<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 				<table class="table table-border table-bg table-bordered table-striped radius table-sort table-hover table-responsive">
 					<thead>
 						<tr class="text-c">
 							<th width="25"><input type="checkbox" name="" value=""></th>
-							<th width="90">开单人员</th>
-							<th width="40">产品</th>
-							<th width="150">数量</th>
-							<th width="50">价格</th>
+							<!--<th width="40">id</th>-->
+							<th width="90">客户</th>
+							<th width="40">订单编号</th>
+							<th width="150">订单日期</th>
 							<th width="50">快递方式</th>
 							<th width="50">备注</th>
 						</tr>
@@ -70,34 +67,14 @@
 					<tbody>
 						<tr class="text-c">
 							<td><input type="checkbox" value="" name=""></td>
-							<td>Admin</td>
-							<td>定制</td>
-							<td>35</td>
-							<td>150</td>
-							<td>汽运</td>
-							<td>备注46546464</td>
-						</tr>
-						<tr class="text-c">
-							<td><input type="checkbox" value="" name=""></td>
-							<td>Admin</td>
-							<td>定制</td>
-							<td>35</td>
-							<td>150</td>
-							<td>汽运</td>
-							<td>备注46546464</td>
-						</tr>
-						<tr class="text-c">
-							<td><input type="checkbox" value="" name=""></td>
-							<td>Admin</td>
-							<td>定制</td>
-							<td>35</td>
-							<td>150</td>
+							<td>名称</td>
+							<td>KZ-0001-130410-006</td>
+							<td>2017-09-28</td>
 							<td>汽运</td>
 							<td>备注46546464</td>
 						</tr>
 					</tbody>
 				</table>
-			</div>
 			</div>
 		</div>
 
@@ -116,8 +93,6 @@
 		<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
 		<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
-		
-		<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script> <!--树形菜单-->
 		<script src="js/verification.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/o_review.js" type="text/javascript" charset="utf-8"></script>
 	</body>

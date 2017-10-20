@@ -10,12 +10,12 @@ $('.table-sort').dataTable({
 		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
 		{
 			"orderable": false,
-			"aTargets": [0, 10]
+			"aTargets": [0]
 		} // 不参与排序的列
 	]
 });
 /*添加*/
-function article_add(title, url, w, h) {
+/*function article_add(title, url, w, h) {
 	var window_title='添加';
 	var title=['订单信息','客户信息','产品信息'];
 	var content_title=[
@@ -36,9 +36,9 @@ function article_add(title, url, w, h) {
 	var select_content=[['品牌1','品牌2','品牌3']];
 	edit_large_show(window_title,title,content_title,content_type,content_id,'1200px','auto',select_content);
 	verification_val(content_id[0][0],'isBlank');
-}
+}*/
 /*编辑*/
-function article_edit(obj) {
+/*function article_edit(obj) {
 	var window_title='编辑';
 	var title=['订单信息','客户信息','产品信息'];
 	var content_title=[
@@ -59,39 +59,39 @@ function article_edit(obj) {
 	var select_content=[['品牌1','品牌2','品牌3']];
 	edit_large_show(window_title,title,content_title,content_type,content_id,'1200px','auto',select_content);
 	verification_val(content_id[0][0],'isBlank');
-}
-/*删除*/
-function article_del(obj, id) {
-	layer.confirm('确认要删除吗？', function(index) {
-		/*$.ajax({
-			type: 'POST',
-			url: '',
-			dataType: 'json',
-			success: function(data) {
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!', {
-					icon: 1,
-					time: 1000
-				});
-			},
-			error: function(data) {
-				console.log(data.msg);
-			},
-		});*/
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!', {
-			icon: 1,
-			time: 1000
+}*/
+
+
+//开单
+function billing(url) {
+	var html = '';
+	$.get(url, function(data) {
+		html = data;
+		layer.open({
+			type: 1,
+			title: '开单',
+			area: ['80%', '80%'],
+			skin: 'edit_content', //样式类名
+			closeBtn: 1, //不显示关闭按钮
+			//anim: 2,
+			shadeClose: true, //开启遮罩关闭
+			content: html
 		});
+		$('.layui-layer-ico').addClass('Hui-iconfont').addClass('Hui-iconfont-close');
 	});
+
 }
 
-$('.edit_btn').on('click', function() {
+$('.billing_btn').on('click', function() {
+	billing('/eye_admin/nested_page/customized_billing.html');
+});
+
+
+
+/*$('.edit_btn').on('click', function() {
 	article_edit($(this));
 });
 $('.add_btn').on('click', function() {
 	article_add();
 });
-$('.del_btn').on('click', function() {
-	article_del($(this))
-});
+*/

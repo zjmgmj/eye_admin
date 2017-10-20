@@ -15,7 +15,7 @@ $('.table-sort').dataTable({
 	]
 });
 
-
+/*
 var setting = {
 	view: {
 		dblClickExpand: false,
@@ -74,4 +74,33 @@ $(document).ready(function(){
 	//demoIframe.on("load", loadReady);
 	var zTree = $.fn.zTree.getZTreeObj("tree");
 	//zTree.selectNode(zTree.getNodeByParam("id",'11'));
+});*/
+
+
+
+//开单
+function billing(url) {
+	var html = '';
+	$.get(url, function(data) {
+		html = data;
+		layer.open({
+			type: 1,
+			title: '开单',
+			area: ['80%', '80%'],
+			skin: 'edit_content', //样式类名
+			closeBtn: 1, //不显示关闭按钮
+			//anim: 2,
+			shadeClose: true, //开启遮罩关闭
+			content: html
+		});
+		$('.layui-layer-ico').addClass('Hui-iconfont').addClass('Hui-iconfont-close');
+	});
+
+}
+
+$('.audit_btn').on('click', function() {
+	billing('/eye_admin/nested_page/audit.html');
 });
+
+
+

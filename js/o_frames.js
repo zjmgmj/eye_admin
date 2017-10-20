@@ -38,6 +38,6 @@ function billing(url) {
 }
 
 $('.billing_btn').on('click', function() {
-	billing('/eye_admin/o_frames_edit.html');
+	billing('/eye_admin/nested_page/billing.html');
 });
 
