@@ -18,15 +18,16 @@ $('.table-sort').dataTable({
 /*添加弹框*/
 function article_add(obj) {
 	var title=['工号','密码','姓名','性别','职位','手机号','身份证','加入时间'];
-	var type=['number','text','text','text','text','tel','number','time']
-	var id=['job_num','pw','name','sex','office','tel','ID_card','join_time']
+	var type=['number','text','sex','text','text','tel','number','time'];
+	var id=['job_num','pw','name','sex','office','tel','ID_card','join_time'];
+	var data=''//数据
 	edit_show(title,id,type,'400px','auto');
 	verification_val(id[0],'isBlank');
 }
 /*编辑弹框*/
 function article_edit(obj) {
 	var title=['工号','密码','姓名','性别','职位','手机号','身份证','加入时间'];
-	var type=['number','text','text','text','text','tel','number','time'];
+	var type=['number','text','sex','text','text','tel','number','time'];
 	var id=['job_num','pw','name','sex','office','tel','ID_card','join_time'];
 	edit_show(title,id,type,'400px','auto');
 	verification_val(id[0],'isBlank');

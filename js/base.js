@@ -25,6 +25,10 @@ function edit_show(title, id, type, w, h, window_title) {
 			input_html = '<select name="" id="' + id[i] + '">' +
 				'<option value="品牌1">品牌1</option><option value="品牌2">品牌2</option><option value="品牌3">品牌3</option>' +
 				'</select>'
+		} else if(type[i] == 'sex') {
+			input_html = '<select name="" id="' + id[i] + '">' +
+				'<option value="男">男</option><option value="女">女</option>' +
+				'</select>'
 		} else if(type[i] == 'time') {
 			input_html = '<input type="text"  name="" id="' + id[i] + '" value="" />';
 			timeId = id[i];

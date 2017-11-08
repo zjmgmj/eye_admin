@@ -1,84 +1,82 @@
-$('.table-sort').dataTable({
+$('#content').dataTable({
 	"aaSorting": [
 		[1, "desc"]
 	], //默认第几个排序
 	"bStateSave": true, //状态保存
-	"bFilter":false,//过滤
+	"bFilter": false, //过滤
 	"pading": false,
-	"sDom":'rt<"bottom"ilp>',//改变元素位置
+	"sDom": 'rt<"bottom"ilp>', //改变元素位置
 	"aoColumnDefs": [
 		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
 		{
 			"orderable": false,
 			"aTargets": [0]
 		} // 不参与排序的列
-	]
+	],
+	ajax: {
+		url: "/api/admin/audit.php",//接口
+		dataType: 'json',
+	},
+	//默认最后一列（最后更新时间）降序排列
+	order: [
+		[0, "desc"]
+	],
+	//行被创建回调
+	createdRow: function(row, data, dataIndex) {},
+	//行创建完成后回调
+	rowCallback: function(row, data, index) {},
+	columnDefs: [{
+		targets: 0,
+		data: 'user_id',
+		title: "用户id",
+		render: function(data, type, row, meta) {
+			return '<input type="checkbox" name="" value="">';
+		}
+	}, {
+		targets: 0,
+		data: 'user_id',
+		title: "客户",
+		render: function(data, type, row, meta) {
+			return data;
+		}
+	}, {
+		targets: 0,
+		data: 'user_id',
+		title: "订单编号",
+		render: function(data, type, row, meta) {
+			return data;
+		}
+	}, {
+		targets: 0,
+		data: 'user_id',
+		title: "订单日期",
+		render: function(data, type, row, meta) {
+			return data;
+		}
+	}, {
+		targets: 0,
+		data: 'user_id',
+		title: "快递方式",
+		render: function(data, type, row, meta) {
+			return data;
+		}
+	}, {
+		targets: 0,
+		data: 'user_id',
+		title: "备注",
+		render: function(data, type, row, meta) {
+			return data;
+		}
+	}],
+	initComplete: function() {
+		//表格加载完毕，手动添加按钮到表格上
+		$('.audit_btn').on('click', function() {
+			billing('/eye_admin/nested_page/audit.html');
+		});
+	}
 });
 
-/*
-var setting = {
-	view: {
-		dblClickExpand: false,
-		showLine: false,
-		selectedMulti: false
-	},
-	data: {
-		simpleData: {
-			enable:true,
-			idKey: "id",
-			pIdKey: "pId",
-			rootPId: ""
-		}
-	},
-	callback: {
-		beforeClick: function(treeId, treeNode) {
-			var zTree = $.fn.zTree.getZTreeObj("tree");
-			if (treeNode.isParent) {
-				zTree.expandNode(treeNode);
-				return false;
-			} else {
-				demoIframe.attr("src",treeNode.file + ".html");
-				return true;
-			}
-		}
-	}
-};
-
-var zNodes =[
-	{ id:1, pId:1, name:"2017-10-09", open:true},
-		{ id:111, pId:1, name:"KZ-0001-130410-006"},
-		{ id:112, pId:1, name:"KZ-0001-130410-007"},
-		{ id:113, pId:1, name:"KZ-0001-130410-008"},
-		{ id:114, pId:1, name:"KZ-0001-130410-009"},
-		{ id:115, pId:1, name:"KZ-0001-130410-010"},
-	{ id:2, pId:2, name:"2017-10-10", open:true},
-		{ id:211, pId:2, name:"KZ-0001-130410-006"},
-		{ id:212, pId:2, name:"KZ-0001-130410-007"},
-		{ id:213, pId:2, name:"KZ-0001-130410-008"},
-		{ id:214, pId:2, name:"KZ-0001-130410-009"},
-		{ id:215, pId:2, name:"KZ-0001-130410-010"},
-];
-		
-var code;
-		
-function showCode(str) {
-	if (!code) code = $("#code");
-	code.empty();
-	code.append("<li>"+str+"</li>");
-}
-		
-$(document).ready(function(){
-	var t = $("#treeDemo");
-	t = $.fn.zTree.init(t, setting, zNodes);
-	demoIframe = $("#testIframe");
-	//demoIframe.on("load", loadReady);
-	var zTree = $.fn.zTree.getZTreeObj("tree");
-	//zTree.selectNode(zTree.getNodeByParam("id",'11'));
-});*/
-
-
-
-//开单
+//审核
 function billing(url) {
 	var html = '';
 	$.get(url, function(data) {
@@ -97,10 +95,3 @@ function billing(url) {
 	});
 
 }
-
-$('.audit_btn').on('click', function() {
-	billing('/eye_admin/nested_page/audit.html');
-});
-
-
-
